@@ -1,0 +1,64 @@
+body{
+  background-color: #007f5f;
+}
+
+.form-container {
+  background-color: #1a759f;
+  border-radius: 30px;
+  display: flex;  
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  height: auto;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+
+}
+
+h1{
+  color: #ffff3f;
+  font-size: 25px;
+  font-weight: bold;
+}
+.ancho{
+  width: 100%;
+}
+
+.button {
+  margin-top: 20px; 
+}
+
+.ancho-button{
+  width: 80%;
+  background-color: #55a630;
+  color: #ffff3f;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: none;
+  border: none;
+  transition: #bfd200 0.5s ease, transform 0.2s ease;
+}
+
+.ancho-button:hover{
+  background-color: #bfd200;
+  transform: translateY(1px);
+}
+
+.ancho-button:active {
+  transform: translateY(1px); /* Mueve el botón aún más hacia abajo cuando se presiona */
+}

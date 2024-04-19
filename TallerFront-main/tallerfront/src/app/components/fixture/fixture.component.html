@@ -1,0 +1,37 @@
+<body class="bf">
+  <div class="menu">
+    <nav class="nav-menu">
+      <button mat-button routerLink="/home" [ngClass]="{'active': isActive('/home')}">Inicio</button>
+            
+      <button mat-button routerLink="/competencias" [ngClass]="{'active': isActive('/competencias')}">Competencias</button>
+      
+      <button mat-button routerLink="/fixture" [ngClass]="{'active': isActive('/fixture')}">Fixture</button>
+
+      <button mat-button routerLink="/clasificacion" [ngClass]="{'active': isActive('/clasificacion')}">Tabla de Posiciones</button>
+
+      <button mat-button routerLink="/equipos" [ngClass]="{'active': isActive('/equipos')}">Equipos</button>
+
+      <button mat-button routerLink="/partidos" [ngClass]="{'active': isActive('/partidos')}">Partidos</button>
+      
+      <button mat-button (click)="logout()">Cerrar Sesión</button>
+    </nav>
+  </div>
+
+  <div class="spacer"></div> <!-- Espacio adicional -->
+
+  <div *ngIf="fixture.length > 0" class="fixture-container">
+    <div *ngFor="let competenciaFixture of fixture; let i = index" class="competencia">
+      <h3 class="competencia-title">Competencia {{ i + 1 }}</h3>
+      <div class="bracket">
+        <ng-container *ngFor="let enfrentamiento of competenciaFixture.enfrentamientos">
+          <div class="match">
+            <div class="team">{{ enfrentamiento.participante }}</div>
+            <div class="versus">vs</div>
+            <div class="team">{{ enfrentamiento.oponente }}</div>
+          </div>
+          <div class="datetime">{{ enfrentamiento.fechaPartido }}</div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</body>

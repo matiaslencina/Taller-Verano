@@ -1,0 +1,53 @@
+<body class="bodycompe">
+    <div class="menu">
+        <nav class="nav-menu">
+            <button mat-button routerLink="/home" [ngClass]="{'active': isActive('/home')}">Inicio</button>
+            
+            <button mat-button routerLink="/competencias" [ngClass]="{'active': isActive('/competencias')}">Competencias</button>
+            
+            <button mat-button routerLink="/fixture" [ngClass]="{'active': isActive('/fixture')}">Fixture</button>
+      
+            <button mat-button routerLink="/clasificacion" [ngClass]="{'active': isActive('/clasificacion')}">Tabla de Posiciones</button>
+      
+            <button mat-button routerLink="/equipos" [ngClass]="{'active': isActive('/equipos')}">Equipos</button>
+      
+            <button mat-button routerLink="/partidos" [ngClass]="{'active': isActive('/partidos')}">Partidos</button>
+            
+            <button class="menu-button" mat-button (click)="logout()">Cerrar Sesión</button>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="competencia-container">
+            <div class="competencia" *ngFor="let competencia of competencias">
+                <div class="competencia-info">
+                    <p class="textcomp"><strong>ID:</strong> {{ competencia.id }}</p>
+                    <p class="textcomp"><strong>NOMBRE:</strong> {{ competencia.nombre }}</p>
+                    <p class="textcomp"><strong>FECHA INICIO:</strong> {{ competencia.fecha_inicio }}</p>
+                    <p class="textcomp"><strong>FECHA CREACION:</strong> {{ competencia.fecha_creacion }}</p>
+                </div>
+                <div class="competencia-buttons">
+                    <button class="competencia-button" (click)="eliminarCompetencia(competencia.id)">Eliminar</button>
+                    <button class="competencia-button" (click)="editarCompetencia(competencia)">Modificar</button>
+                </div>
+            </div>
+        </div>
+        <button class="create-button" mat-button routerLink="/mod-competencias">Crear Competencias</button>
+    </div>
+    <div class="container">
+    <div *ngIf="mostrarFormularioEditar">
+        <h2>Editar Competencia</h2>
+        <form [formGroup]="formularioEditar" (ngSubmit)="guardarCambios()">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" formControlName="nombre">
+            </div>
+            <div class="form-group">
+                <label for="fechaInicio">Fecha de Inicio:</label>
+                <input type="datetime-local" class="form-control" id="fechaInicio" formControlName="fechaInicio">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            <button type="button" class="btn btn-secondary" (click)="cancelarEdicion()">Cancelar</button>
+        </form>
+    </div>
+    </div>
+</body>

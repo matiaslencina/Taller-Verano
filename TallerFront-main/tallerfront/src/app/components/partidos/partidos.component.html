@@ -1,0 +1,116 @@
+<html>
+  <body>
+    <div class="menu">
+      <nav class="nav-menu">
+        <button mat-button routerLink="/home" [ngClass]="{'active': isActive('/home')}">Inicio</button>
+            
+        <button mat-button routerLink="/competencias" [ngClass]="{'active': isActive('/competencias')}">Competencias</button>
+        
+        <button mat-button routerLink="/fixture" [ngClass]="{'active': isActive('/fixture')}">Fixture</button>
+  
+        <button mat-button routerLink="/clasificacion" [ngClass]="{'active': isActive('/clasificacion')}">Tabla de Posiciones</button>
+  
+        <button mat-button routerLink="/equipos" [ngClass]="{'active': isActive('/equipos')}">Equipos</button>
+  
+        <button mat-button routerLink="/partidos" [ngClass]="{'active': isActive('/partidos')}">Partidos</button>
+        
+        <button mat-button (click)="logout()">Cerrar Sesión</button>
+      </nav>
+    </div>
+    
+    <div class="container">
+      <h2>Partidos Programados</h2>
+      <div class="partidos-grid" *ngIf="partidos && partidos.length > 0">
+        <div class="partido" *ngFor="let partido of partidos">
+          <div>
+            <p><strong>ID:</strong> {{ partido.id }}</p>
+            <p><strong>Goles Local:</strong> {{ partido.goles_local }}</p>
+            <p><strong>Goles Visitante:</strong> {{ partido.goles_visitante }}</p>
+            <p><strong>Fecha de Inicio:</strong> {{ partido.fecha_realizacion | date:'dd/MM/yyyy HH:mm' }}</p>
+            <p><strong>Competencia:</strong> {{ partido.nombreCompetencia }}</p>
+            <p><strong>Local:</strong> {{ partido.nombreEquipoLocal }}</p>
+            <p><strong>Visitante:</strong> {{ partido.nombreEquipoVisitante }}</p>
+          </div>
+          <div>
+            <button mat-button (click)="partido.id !== undefined ? eliminarPartido(partido.id) : null">Eliminar</button>
+
+            <button mat-button (click)="editarPartido(partido)">Modificar</button>
+          </div>
+          <div *ngIf="partido === partidoSeleccionado && mostrarFormularioEdicion">
+            <form [formGroup]="partidoForm" (ngSubmit)="guardarCambios()">
+              <label for="goles_local_edit">Goles Local</label>
+              <input type="number" id="goles_local_edit" formControlName="goles_local" required>
+          
+              <label for="goles_visitante_edit">Goles Visitante</label>
+              <input type="number" id="goles_visitante_edit" formControlName="goles_visitante" required>
+          
+              <label for="fecha_realizacion_edit">Fecha de Inicio</label>
+              <input type="datetime-local" id="fecha_realizacion_edit" formControlName="fecha_realizacion" required>
+          
+              <label for="competencia_edit">Competencia</label>
+              <select id="competencia_edit" formControlName="competencia" required>
+                <option value="">Seleccionar Competencia</option>
+                <option *ngFor="let competencia of competencias" [value]="competencia.id">{{ competencia.nombre }}</option>
+              </select>
+          
+              <label for="local_edit">Local</label>
+              <select id="local_edit" formControlName="local" required>
+                <option value="">Seleccionar Local</option>
+                <option *ngFor="let participante of participantes" [value]="participante.id">{{ participante.nombre }}</option>
+              </select>
+          
+              <label for="visitante_edit">Visitante</label>
+              <select id="visitante_edit" formControlName="visitante" required>
+                <option value="">Seleccionar Visitante</option>
+                <option *ngFor="let participante of participantes" [value]="participante.id">{{ participante.nombre }}</option>
+              </select>
+          
+          
+              
+              <button type="submit">Guardar Cambios</button>
+            </form>
+            <button mat-button (click)="cancelarEdicion()">Cancelar</button>
+          </div>
+          
+        </div>
+      </div>
+    
+      <div *ngIf="!partidos || partidos.length === 0">
+        <p>No hay partidos disponibles.</p>
+      </div>
+      <div class="crear-partido">
+        <button mat-button (click)="mostrarFormulario = true">Crear Partido</button>
+      
+        <form *ngIf="mostrarFormulario" [formGroup]="partidoForm" (ngSubmit)="enviarFormulario()">
+          <label for="goles_local">Goles Local</label>
+          <input type="number" id="goles_local" formControlName="goles_local" required>
+
+          <label for="goles_visitante">Goles Visitante</label>
+          <input type="number" id="goles_visitante" formControlName="goles_visitante" required>
+
+          <label for="fecha_realizacion">Fecha de Inicio</label>
+          <input type="datetime-local" id="fecha_realizacion" formControlName="fecha_realizacion" required>
+
+          <label for="competencia">Competencia</label>
+          <select id="competencia" formControlName="competencia" required>
+            <option value="">Seleccionar Competencia</option>
+            <option *ngFor="let competencia of competencias" [ngValue]="competencia">{{ competencia.nombre }}</option>
+          </select>
+
+          <label for="local">Local</label>
+          <select id="local" formControlName="local" required>
+            <option *ngFor="let participante of participantes" [ngValue]="participante">{{ participante.nombre }}</option>
+          </select>
+
+          <label for="visitante">Visitante</label>
+          <select id="visitante" formControlName="visitante" required>
+            <option *ngFor="let participante of participantes" [ngValue]="participante">{{ participante.nombre }}</option>
+          </select>
+
+          <button type="submit">Guardar Partido</button>
+          <button type="button" (click)="cancelarCreacionPartido()">Cancelar</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<body>
+    <div class="menu">
+        <nav class="nav-menu">
+            <button class="menu-button" mat-button routerLink="/home">Inicio</button>
+            <button class="menu-button" mat-button routerLink="/competencias">Competencias</button>
+            <button class="menu-button" mat-button routerLink="/fixture">Fixture</button>
+            <button class="menu-button" mat-button routerLink="/clasificacion">Tabla de Posiciones</button>
+            <button class="menu-button" mat-button routerLink="/equipos">Equipos</button>
+            <button class="menu-button" mat-button routerLink="/partidos">Partidos</button>
+            <button class="menu-button" mat-button (click)="logout()">Cerrar Sesión</button>
+        </nav>
+    </div>
+
+    <div>
+        <!-- Botón para crear una nueva clasificación -->
+        <button (click)="crearClasificacion()">Crear Clasificación</button>
+      
+        <!-- Lista de clasificaciones -->
+        <ul>
+          <li *ngFor="let clasificacion of clasificaciones">
+            <span>{{ clasificacion.competidor.nombre }}</span> <!-- Mostrar el nombre del competidor -->
+            <span>{{ clasificacion.numeroGanados }}</span> <!-- Mostrar el número de partidos ganados -->
+            <!-- Agrega más campos según sea necesario -->
+            
+            <!-- Botón para actualizar una clasificación -->
+            <button (click)="actualizarClasificacion(clasificacion)">Actualizar</button>
+            
+            <!-- Botón para eliminar una clasificación -->
+            <button (click)="eliminarClasificacion(clasificacion.id)">Eliminar</button>
+          </li>
+        </ul>
+      </div>
+      
+</body>

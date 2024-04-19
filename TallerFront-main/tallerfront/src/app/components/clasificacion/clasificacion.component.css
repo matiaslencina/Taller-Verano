@@ -1,0 +1,70 @@
+.nav-menu{
+    background-color: #000;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+.nav-menu button {
+    color:#fff;
+    border: none;
+    font-size: 16px; 
+    margin-right: 10px; 
+    transition: #ff9c1b 0.3s ease; 
+}
+
+.nav-menu button:hover {
+    color: white;
+    background-color: #ff9c1b; 
+}
+
+.nav-menu button:active {
+    background-color: #1a759f;
+}
+
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+
+  button.update, button.delete {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  button.update:hover, button.delete:hover {
+    background-color: #c82333;
+  }
+  

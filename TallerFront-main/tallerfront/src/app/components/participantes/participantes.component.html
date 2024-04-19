@@ -1,0 +1,41 @@
+<html>
+  <body>
+    <div class="menu">
+        <nav class="nav-menu">
+          <button mat-button routerLink="/home" [ngClass]="{'active': isActive('/home')}">Inicio</button>
+            
+          <button mat-button routerLink="/competencias" [ngClass]="{'active': isActive('/competencias')}">Competencias</button>
+          
+          <button mat-button routerLink="/fixture" [ngClass]="{'active': isActive('/fixture')}">Fixture</button>
+    
+          <button mat-button routerLink="/clasificacion" [ngClass]="{'active': isActive('/clasificacion')}">Tabla de Posiciones</button>
+    
+          <button mat-button routerLink="/equipos" [ngClass]="{'active': isActive('/equipos')}">Equipos</button>
+    
+          <button mat-button routerLink="/partidos" [ngClass]="{'active': isActive('/partidos')}">Partidos</button>
+
+          <button mat-button (click)="logout()">Cerrar Sesión</button>
+        </nav>
+    </div>
+
+    <div class="content">
+      <h2>Listado de Participantes</h2>
+
+      <div *ngIf="participantes && participantes.length > 0" class="participantes-container">
+        <div class="participante" *ngFor="let participante of participantes">
+          <div class="participante-info">
+            <h3><strong>{{ participante.nombre }}</strong></h3>
+            <p>Colores: {{ participante.colores }}</p>
+            <p>Trofeos: {{ participante.trofeos }}</p>
+            <p>Fecha de Baja: {{ participante.fecha_baja | date }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div *ngIf="!participantes || participantes.length === 0">
+      <p>No hay participantes disponibles.</p>
+    </div>
+  </body>
+</html>

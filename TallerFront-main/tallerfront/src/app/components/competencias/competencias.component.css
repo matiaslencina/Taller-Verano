@@ -1,0 +1,142 @@
+
+.bodycompe {
+    background-color: #f2f2f2; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.nav-menu {
+    background-color: #333; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .nav-menu button {
+    color: #1a759f; 
+    background-color: transparent; 
+    border: none;
+    font-size: 18px; 
+    padding: 10px 20px; 
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  }
+  
+  .nav-menu button:hover {
+    background-color: #c8d8e0; 
+  }
+  
+  .nav-menu button:active {
+    background-color: #bad0e0;
+  }
+  
+  .nav-menu button.active {
+    border: 2px solid #1a759f;
+  }
+
+
+.content {
+    padding-top: 80px;
+    min-height: 100vh;
+    background-color: #f2f2f2; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+h2 {
+    color: #333; 
+    font-size: 40px;
+    text-align: center;
+    line-height: 1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.competencia-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+
+.competencia {
+    color: #333; 
+    width: calc(25% - 10px);
+    background-color: #f0f3f5; 
+    padding: 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 4px solid #d9e2e6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.competencia:last-child {
+    margin-right: 75vh;
+}
+
+.textcomp{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.textcomp strong {
+    font-weight: bold; 
+}
+
+.textcomp strong:first-child {
+    color: #1a759f; 
+}
+
+
+.competencia-button {
+    color: #fff;
+    background-color: #1a759f; 
+    border: none;
+    font-size: 14px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    padding: 6px 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.competencia-button:hover {
+    background-color: #2b9dc6; 
+}
+
+.competencia-button:active {
+    background-color: #145c7a; 
+}
+
+
+.create-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #1a759f; 
+    border-radius: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.create-button:hover {
+    background-color: #2b9dc6; 
+}
+
+.create-button:active {
+    background-color: #145c7a; 
+}
+
+
+.container {
+    background-color: #f2f2f2;
+}
+
+

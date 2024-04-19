@@ -1,0 +1,83 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .nav-menu {
+    background-color: #000;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .nav-menu button {
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: #ff9c1b 0.3s ease;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .nav-menu button:hover {
+    color: white;
+    background-color: #ff9c1b;
+  }
+
+  .nav-menu button:active {
+    background-color: red;
+  }
+
+  .nueva-competencia {
+
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .nueva-competencia form {
+    margin-top: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }

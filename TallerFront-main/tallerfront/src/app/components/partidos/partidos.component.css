@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+.nav-menu {
+  background-color: #333; 
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.nav-menu button {
+  color: #1a759f; 
+  background-color: transparent; 
+  border: none;
+  font-size: 18px; 
+  padding: 10px 20px; 
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.nav-menu button:hover {
+  background-color: #c8d8e0; 
+}
+
+.nav-menu button:active {
+  background-color: #bad0e0; 
+}
+
+.nav-menu button.active {
+  border: 2px solid #1a759f;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2; 
+}
+
+.menu {
+  background-color: #333; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.container {
+  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  color: #333;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.partidos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.partido {
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.partido p {
+  margin: 5px 0;
+}
+
+.crear-partido {
+  margin-top: 20px;
+}
+
+.crear-partido button {
+  background-color: #1a759f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.crear-partido button:hover {
+  background-color: #0056b3;
+}
+
+.crear-partido form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.crear-partido form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.crear-partido form input,
+.crear-partido form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.crear-partido form button[type="submit"] {
+  background-color: #5448c8;
+}
+
+.crear-partido form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.partido button {
+  color: #fff;
+  background-color: #1a759f; 
+  border: none;
+  font-size: 14px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  padding: 6px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.partido button:hover {
+  background-color: #2b9dc6; 
+}
+
+.partido button:active {
+  background-color: #145c7a; 
+}
+

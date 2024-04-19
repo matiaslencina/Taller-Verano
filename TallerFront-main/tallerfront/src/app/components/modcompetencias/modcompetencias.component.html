@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="menu">
+    <nav class="nav-menu">
+        <button mat-button routerLink="/home">Inicio</button>
+        <button mat-button routerLink="/competencias">Competencias</button>
+        <button mat-button routerLink="/fixture">Fixture</button>
+        <button mat-button routerLink="/clasificacion">Tabla de Posiciones</button>
+        <button mat-button routerLink="/equipos">Equipos</button>
+        <button mat-button routerLink="/partidos">Partidos</button>
+        <button mat-button (click)="logout()">Cerrar Sesión</button>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="nueva-competencia">
+      <h2>Nueva Competencia</h2>
+      <form [formGroup]="competenciaForm" (ngSubmit)="crearCompetencia()">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" id="nombre" formControlName="nombre">
+        </div>
+        <div class="form-group">
+          <label for="fechaInicio">Fecha de Inicio:</label>
+          <input type="datetime-local" class="form-control" id="fechaInicio" formControlName="fechaInicio">
+        </div>
+        <button type="submit" class="btn">Crear Competencia</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
